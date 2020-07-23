@@ -1,10 +1,16 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
-  height: 40vmin;
+  height:5vmin;
   pointer-events: none;
+  z-index:0;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+ 
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,25 +20,50 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-image: url(./samflag.png); */
+  background-color: bisque;
+  min-height: 20vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: colomn;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(30px + 2vmin);
+  color: black;
+  text-shadow: goldenrod;
+ 
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+li {
+  list-style: none;
+  text-decoration-line: none;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.navbar {
+  list-style: none;
+  text-decoration-line: none;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.sitename{
+  text-shadow: 1px 1px 2px green, 0 0 1em beige, 0 0 0.2em white;;
 }
