@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, Button
-  } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap';
   import { users, shops } from '../data';
-  
+
   
  export const StoreListings = (props) => {
      const  [users, setUser] = useState({});
