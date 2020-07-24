@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './amlogo.png';
+import logo from './amlogo1.png';
 import {Route, Link} from 'react-router-dom';
 import './App.css';
-import { StoreListings }  from './components/Customers';
-import { Login }  from './components/Business';
+import {ItemList}  from './components/ItemList';
+import { Login }  from './components/Login';
 import { Button } from 'reactstrap';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" width="300px" height="100%"   />
-       <p className="sitename">SAM Business Portal</p>
-      </header>
-      <div className="navbar">
-      <Link to='/customers'><Button color="success">Customers</Button></Link>
-      <Link to='/login'><Button color="primary">Business Login</Button></Link>
+    <img className="logo" src={logo} alt="logo" />
+     <div className="nav">
+     <Link to='/login'><Button color="success">Shop Owner Login</Button></Link>
+      
       </div>
-      <Route exact path='/customers' component={StoreListings} />
+       <header className="App-header">
+       <div className="loginForm">
       <Route exact path='/login' component={Login} />
+      </div>
+        </header>
+
+      
+    
+      <Route exact path='/itemlist' component={ItemList} />
     </div>
   );
 }
