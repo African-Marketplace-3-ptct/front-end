@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const Login = (props) => {
 
-    const [login, setLogin] = useState({});
+    const [setLogin] = useState({});
 
     const handleChange = (e) => {
 
