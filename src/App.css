@@ -1,38 +1,85 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  display: flexbox;
+  flex-direction: row;
+  /* align-content: space-between;  */
+  
 }
 
-.App-logo {
-  height: 40vmin;
+/* .App-logo {
+  height:5vmin;
   pointer-events: none;
-}
+  z-index:0;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+ 
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: url('./assets/market.jpg');
+  /* opacity: .8; */
+  /* background-color: bisque; */
+  min-height:80vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* justify-content: center; */
+  font-size: calc(30px + 2vmin);
+  color: black;
+  /* text-shadow: goldenrod; */
+  margin-top: auto 10px;
+
+ 
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+ 
+
+.nav {
+  list-style: none;
+  text-decoration-line: none;  
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+}
+
+.sitename{
+  text-shadow: 1px 1px 2px green, 0 0 1em beige, 0 0 0.2em white;;
+}
+
+
+.logo {
+  padding: 5px;
+  width: 150px;
+  height: 75px;
+  /* opacity: .8; */
+  border-radius: 20px;
+  vertical-align: middle;
+}
+
+ 
+
+.loginform {
+ justify-content:center;
+
 }
