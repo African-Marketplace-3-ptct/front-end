@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './amlogo1.png';
-import {Route, Link} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import {ItemList}  from './components/ItemList';
-import { Login }  from './components/Login';
-import { Button } from 'reactstrap';
+import Login from './components/Login';
+ 
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
     <img className="logo" src={logo} alt="logo" />
      <div className="nav">
-     <Link to='/login'><Button color="success">Shop Owner Login</Button></Link>
+   
       
       </div>
        <header className="App-header">
@@ -22,7 +22,7 @@ function App() {
         </header>
 
       
-    
+        <Route exact path='/' component={App} />
       <Route exact path='/itemlist' component={ItemList} />
     </div>
   );
