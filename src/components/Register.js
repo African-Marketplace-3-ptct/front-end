@@ -4,7 +4,7 @@ import axios from 'axios';
 import {Form, FormGroup, Label,  Input, Button} from 'reactstrap';
 
 
-const Login = () => {
+const Register = () => {
    
     const [ credentials, setCredentials ] = useState({});
     const {push} = useHistory();
@@ -19,14 +19,14 @@ const Login = () => {
          
     }
 
-    const handleLogin = e => {
+    const handleRegister = e => {
         e.preventDefault();
         axios
-            .post('http://localhost:5000/api/login', credentials)
+            .post('http://localhost:5000/api/register', credentials)
             .then(res => {
             console.log(res.data)
-            localStorage.setItem('token', res.data.payload)
-            push('/itemlist')
+           
+            push('/login')
         })
         .catch(err => {
             console.log('Something is wrong', err)
@@ -34,9 +34,9 @@ const Login = () => {
     }
 
     return (  
-        <div className="loginform">
-        <h3>Member Login</h3>
-        <Form onSubmit={handleLogin}>
+        <div className="registerform">
+        <h3>Member Registration</h3>
+        <Form onSubmit={handleRegister}>
          <FormGroup>
         <Label for="username">Username </Label>
         <Input 
@@ -59,8 +59,8 @@ const Login = () => {
             
             />
       </FormGroup>
-      <Button>Login</Button>
-      <p>Not a member? <Link to='/register'>Register Here</Link></p>
+      <Button>Register</Button>
+      <p>Already a member? <Link to='/login'>Login Here</Link></p>
       </Form>
         
         </div>
@@ -68,5 +68,5 @@ const Login = () => {
 
 }
 
-export default Login;
+export default Register;
  
