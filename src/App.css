@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Ranchers&display=swap');
+
 .App {
   /* text-align: center; */
   display: flexbox;
   flex-direction: row;
+  font-family: 'Kaushan Script', cursive;
+
   /* align-content: space-between;  */
   
 }
@@ -86,17 +91,20 @@ Form{
  background-color: gray;
  opacity: .7;
  color: black;
+ font-family: 'Kaushan Script', cursive;
+ 
 }
 
 p {
   justify-content:center;
   color: black;
+  font-family: 'Kaushan Script', cursive;
+
  }
 
 h1 h3 {
   color: black;
+  font-family: 'Kaushan Script', cursive;
 }
 
-.dynamic-content {
-  display:none;
-}
+ 
