@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Ranchers&display=swap');
+
 .App {
   /* text-align: center; */
   display: flexbox;
   flex-direction: row;
+  font-family: 'Kaushan Script', cursive;
+
   /* align-content: space-between;  */
   
 }
@@ -23,8 +28,13 @@
 } */
 
 .App-header {
-  background-image: url('./assets/market.jpg');
-  /* opacity: .8; */
+  background-image: url('./assets/amlogo.png');
+  background-origin: content-box;
+  background-repeat: repeat-y;
+  background-position-x: right;
+  background-size: contain;
+ text-align: center;
+  opacity: .9;
   /* background-color: bisque; */
   min-height:80vh;
   display: flex;
@@ -34,25 +44,22 @@
   font-size: calc(30px + 2vmin);
   color: black;
   /* text-shadow: goldenrod; */
-  margin-top: auto 10px;
-
- 
+  margin-top: auto 10px; 
 }
 
 .App-link {
   color: #61dafb;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
+Label {
+  font-size: 30px;
+  color: Black;
+}
  
+Form{
+  text-align: center;
+  margin: 0px;
+}
 
 .nav {
   list-style: none;
@@ -79,7 +86,25 @@
 
  
 
-.loginform {
+.loginform, .registerform {
  justify-content:center;
-
+ background-color: gray;
+ opacity: .7;
+ color: black;
+ font-family: 'Kaushan Script', cursive;
+ 
 }
+
+p {
+  justify-content:center;
+  color: black;
+  font-family: 'Kaushan Script', cursive;
+
+ }
+
+h1 h3 {
+  color: black;
+  font-family: 'Kaushan Script', cursive;
+}
+
+ 
