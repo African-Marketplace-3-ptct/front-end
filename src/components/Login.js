@@ -22,10 +22,11 @@ const Login = () => {
     const handleLogin = e => {
         e.preventDefault();
         axios
-            .post('http://localhost:5000/api/login', credentials)
+            .post('https://africanmarketplaceapp.herokuapp.com/api/login', credentials)
             .then(res => {
             console.log(res.data)
             localStorage.setItem('token', res.data.payload)
+           
             push('/itemlist')
         })
         .catch(err => {
