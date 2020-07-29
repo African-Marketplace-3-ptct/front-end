@@ -14,21 +14,23 @@ const formSchema = yup.object().shape({
 
 export const ItemForm = (props) => {
     const [itemformState, setitemformState] = useState({
-      name: "",
-      description: "",
+      itemName: "",
+      itemType: "",
       price: "",
-      location: ""
+      itemdesc: "",
+      imageUrl: ""
       });
     
       const [errorState, seterrorState] = useState({
-        name: "",
-        description: "",
+        itemName: "",
+        itemType: "",
         price: "",
-        location: ""
+        itemdesc: "",
+        imageUrl:""
       });
 
     //   Backend API URL here for the location to POST items to
-    const backendAPIURL = "";
+    const backendAPIURL = `http://africanmarketplaceapp.herokuapp.com/api/items/`;
 
       const formSubmit = (e) => {
         e.preventDefault();
@@ -76,13 +78,18 @@ export const ItemForm = (props) => {
       <form onSubmit={formSubmit} style={{marginTop: '200px'}}>
         <h1>Add a Listing</h1>
         
-            <input type="text" name="name" onChange={inputChange} value={itemformState.name} placeholder="Item Name"/>
+            <input type="text" name="itemName" onChange={inputChange} value={itemformState.name} placeholder="Item Name"/>
+            {errorState.name.length > 0 ? (
+            <p>{errorState.name} </p>
+          ) : null}
+
+          <input type="text" name="itemType" onChange={inputChange} value={itemformState.name} placeholder="Item Name"/>
             {errorState.name.length > 0 ? (
             <p>{errorState.name} </p>
           ) : null}
         
         
-            <input type="textarea" rows="4" name="description" onChange={inputChange} value={itemformState.description} placeholder="Item Description" />
+            <input type="textarea" rows="4" name="itemdesc" onChange={inputChange} value={itemformState.description} placeholder="Item Description" />
             {errorState.description.length > 0 ? (
             <p>{errorState.description} </p>
           ) : null}
@@ -94,14 +101,14 @@ export const ItemForm = (props) => {
         
         
         
-        <select name="location" value={itemformState.location} onChange={inputChange} placeholder="Market Location" > 
+        {/* <select name="location" value={itemformState.location} onChange={inputChange} placeholder="Market Location" > 
         
           <option value="">Select Your Market Location</option>
           <option value="Kenya">Kenya</option>
           <option value="Tanzania">Tanzania</option>
           <option value="Rwanda">Rwanda</option>
           <option value="Uganda">Uganda</option>
-        </select>
+        </select> */}
   
         
         <button type="submit" name="submit">Add Item </button> 

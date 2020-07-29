@@ -1,25 +1,45 @@
 // Temporary location for all my logic and my API call to display Item componenet with Props
 import React, { useState, useEffect } from "react";
+// import {useParams} from 'react-router-dom';
 import axios from "axios";
 import Item from './Item'
 
 export const ItemList = (props) => {
-  let [itemListState, setitemListState] = useState([]);
+  let [itemListState, setItemListState] = useState([]);
+  // const params = useParams();
 
 //   API URL HERE
-  const backendAPI = "";
+  // const backendAPI = `https://africanmarketplaceapp.herokuapp.com/api/${id}`;
 
 
-  useEffect(() => {
+  useEffect((Id) => {
     axios
-          .get(backendAPI)
+          .get(`https://africanmarketplaceapp.herokuapp.com/api/${Id}`)
           .then((response) => {
             console.log("Logged", response);
-            setitemListState(response.data);
+            setItemListState(response.data);
           })
           .catch((error) => console.log(error));
   },[])
   
+// const fetchItem = (props) => {
+//   axios
+//       .get(`http://africanmarketplaceapp.herokuapp.com/api/$(owners.id)`)
+//       .then(res => {
+        
+//         console.log(res); 
+//         setItemListState(res.data)})
+//       .catch((err) => console.log(err.res))
+// }
+
+
+// useEffect(() => {
+//   fetchItem(params.owners.id);
+// console.log("USER", params.owners.id);
+
+// }, []);
+
+
 
   return (
     <div style={{ marginTop: '200px', marginBottom: '200px'}}>

@@ -22,7 +22,7 @@ const Register = () => {
     const handleRegister = e => {
         e.preventDefault();
         axios
-            .post('http://localhost:5000/api/register', credentials)
+            .post('https://africanmarketplaceapp.herokuapp.com/api/register', credentials)
             .then(res => {
             console.log(res.data)
            
@@ -55,6 +55,39 @@ const Register = () => {
             name="password" 
             id="password" 
             placeholder="Enter a password"
+            onChange={handleChange}
+            
+            />
+      </FormGroup>
+      <FormGroup>
+        <Label for="firstName">First Name </Label>
+        <Input 
+            type="text" 
+            name="firstName" 
+            id="firstName" 
+            placeholder="Enter first name"
+            onChange={handleChange}
+            
+            />
+      </FormGroup>
+      <FormGroup>
+        <Label for="lastName">Last Name </Label>
+        <Input 
+            type="lastName" 
+            name="lastName" 
+            id="lastName" 
+            placeholder="Enter Last Name"
+            onChange={handleChange}
+            
+            />
+      </FormGroup>
+      <FormGroup>
+        <Label for="password">Email </Label>
+        <Input 
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="Enter an email address"
             onChange={handleChange}
             
             />
