@@ -41,6 +41,7 @@ const Login = () => {
         <Label for="username">Username </Label>
         <Input 
             type="text" 
+            autocomplete="username"
             name="username" 
             id="username" 
             placeholder="Enter a Username"
@@ -52,12 +53,17 @@ const Login = () => {
         <Label for="password">Password </Label>
         <Input 
             type="password" 
-            name="password" 
+            name="password"  
+            autocomplete="current-password" 
             id="password" 
             placeholder="Enter a password"
-            onChange={handleChange}
-            
+            onChange={handleChange} 
             />
+        
+            
+            
+            
+             
       </FormGroup>
       <Button>Login</Button>
       <p>Not a member? <Link to='/register'>Register Here</Link></p>
