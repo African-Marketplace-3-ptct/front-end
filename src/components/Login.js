@@ -24,7 +24,7 @@ const Login = () => {
             .post('https://africanmarketplaceapp.herokuapp.com/api/login', credentials)
             .then(res => {
             console.log(res.data)
-            localStorage.setItem('token', res.data.payload)
+            localStorage.setItem('token', res.data.token)
            
             push('/itemlist')
         })
