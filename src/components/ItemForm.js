@@ -32,7 +32,7 @@ export const ItemForm = (props) => {
       });
 
     //   Backend API URL here for the location to POST items to
-    const backendAPIURL = `http://africanmarketplaceapp.herokuapp.com/api/items`;
+    const backendAPIURL = `https://africanmarketplaceapp.herokuapp.com/api/items`;
 
       const formSubmit = (e) => {
         e.preventDefault();
