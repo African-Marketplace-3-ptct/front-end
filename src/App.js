@@ -32,7 +32,7 @@ function App() {
         
       <Switch>
         <PrivateRoute exaxt path='/item-form' component={ItemForm} />
-        <PrivateRoute exact path='/itemlist' component={ItemList} />
+        <Route exact path='/itemlist' component={ItemList} />
        </Switch>
        </header>
     </div>
