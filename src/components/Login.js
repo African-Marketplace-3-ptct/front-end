@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useHistory, Link} from 'react-router-dom';
-import axios from 'axios';
+import axiosWithAuth from 'axios';
 import {Form, FormGroup, Label,  Input, Button} from 'reactstrap';
 
 
@@ -20,8 +20,8 @@ const Login = () => {
 
     const handleLogin = e => {
         e.preventDefault();
-        axios
-            .post('https://africanmarketplaceapp.herokuapp.com/api/login', credentials)
+        axiosWithAuth
+            .post('/api/login', credentials)
             .then(res => {
             console.log(res.data)
             localStorage.setItem('token', res.data.token)
