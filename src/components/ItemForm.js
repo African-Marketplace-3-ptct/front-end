@@ -41,7 +41,7 @@ export const ItemForm = (props) => {
         .post(backendAPIURL, itemformState)
         .then(response => {
           console.log(response.data)
-          props.history.push('/');
+          props.history.push('/itemlist');
         })
         .catch(error => {console.log(error)})
       };

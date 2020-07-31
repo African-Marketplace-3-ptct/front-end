@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import {axiosWithAuth} from '../utils/axiosWithAuth'
 
 // Kept the Props names matching to the names used in the ItemForm.js component
 
 const Item = (props) => {
 
-   const token = localStorage.getItem("token")
-    
+  const token = localStorage.getItem("token")
+  const {id} = useParams();
+  const history = useHistory()
+
+  const [item, setItem] = useState()
+
+
+  const fetchItem = (id) => {
+    axiosWithAuth()
+      .get(`https://africanmarketplaceapp.herokuapp.com/api/items/${id}`)
+      .then((res) => setItem(res.data))
+      .catch((err) => console.log(err.response));
+  };
+
+  useEffect(() => {
+    fetchItem(id);
+  }, [id]);
+
+   const editHandler = () => history.push(`/update-item/${id}`)
+   
+   const deleteHandler = e => { 
+    e.preventDefault()
+    axiosWithAuth()
+    .delete(`https://africanmarketplaceapp.herokuapp.com/api/items/${props.itemId}`, item)
+    .then(res => {
+      console.log('DELETED?', id, res, )
+      history.push(`/itemlist`)
+      props.getItemList()
+  })
+     .catch(err => console.log(err))
+  }
   return (
     <div className="item">
       <h3>{props.itemName}</h3>
@@ -14,12 +45,9 @@ const Item = (props) => {
       <p>Market Location: {props.itemLocation}</p>
       
 
-      {/* //   IF or ? - display EDIT BUTTON if they're logged in? */}
-      {/* {loggedIn ? 'Hide' : 'Show'} */}
-      {/* LOOK FOR TOKEN AND IF NOT THERE, DO NOT RENDER */}
-      {/* localStorage.getItem("token");  */}
 
-      {token ? <button>EDIT</button> : ''}
+      {token ? <button onClick={editHandler}>EDIT</button> : ''}
+      {token ? <button onClick={deleteHandler}>DELETE</button> : ''}
     </div>
   );
 };
