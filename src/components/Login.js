@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import axios from 'axios';
 import {Form, FormGroup, Label,  Input, Button} from 'reactstrap';
-
+import {UserContext} from '../utils/UserContext'
 
 const Login = () => {
    
     const [ credentials, setCredentials ] = useState({});
     const {push} = useHistory();
+    const {setUser} = useContext(UserContext)
 
     const handleChange = e => {
          
@@ -25,7 +26,7 @@ const Login = () => {
             .then(res => {
             console.log(res.data)
             localStorage.setItem('token', res.data.token)
-           
+           setUser(res.data.user[0].username)
             push('/itemlist')
         })
         .catch(err => {
